@@ -116,3 +116,19 @@ Describe how you confirmed the lab worked:
 
 ## Lessons Learned
 What worked well, what broke, and what you would do differently next time.
+
+## Validation & Verification
+
+Successful installation is confirmed by:
+
+- System boots without errors
+- User can log in locally
+- Network interface receives an IP address
+- Internet connectivity confirmed via package updates
+- Ubuntu version and kernel information displayed correctly
+
+Optional validation:
+
+- SSH access enabled
+- Snapshot created in VirtualBox for rollback
+
