@@ -66,6 +66,8 @@ All activities are performed in a non-production, local lab environment.
 - System update and patching workflows
 
 ---
+## Labs Index
+See [LABS_INDEX.md](LABS_INDEX.md) for the full list of labs and instructions.
 
 ## Repository Structure
 
