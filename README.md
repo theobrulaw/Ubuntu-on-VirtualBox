@@ -1,7 +1,3 @@
-## Labs Index
-See [LABS_INDEX.md](LABS_INDEX.md) for the full list of labs and instructions.
-
-
 # Ubuntu Linux on VirtualBox (Systems & Operations Lab)
 
 This repository documents hands-on labs and exercises using Ubuntu Linux
