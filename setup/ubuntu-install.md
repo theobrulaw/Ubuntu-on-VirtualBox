@@ -103,18 +103,36 @@ used in this lab.
 3. Key decisions or trade-offs made
 
 ## Validation & Verification
-Describe how you confirmed the lab worked:
-- Commands
-- Logs
-- Screenshots
-- Outputs
+Successful installation is confirmed by:
+
+- System boots without errors
+- User can log in locally
+- Network interface receives an IP address
+- Internet connectivity confirmed via package updates
+- Ubuntu version and kernel information displayed correctly
+
+Optional validation:
+
+- SSH access enabled
+- Snapshot created in VirtualBox for rollback
 
 ## Security & Operational Considerations
-- Security risks addressed
-- Hardening steps applied
-- Operational trade-offs
+- A non-root user account is used with sudo privileges
+- System packages are fully updated
+- SSH service enabled for remote access (to be hardened in later labs)
+- NAT networking limits exposure to external networks
+- Snapshots provide quick recovery and change tracking
+
 
 ## Lessons Learned
-What worked well, what broke, and what you would do differently next time.
+- Ubuntu installation is straightforward but requires attention to resource
+  allocation for smooth performance
+- Enabling SSH during installation simplifies remote management
+- NAT networking is ideal for early labs due to simplicity and isolation
+- Creating a clean baseline VM makes future labs faster and more consistent
+
+This Ubuntu VM will serve as the base system for networking, security
+hardening, automation, and cloud-related exercises.
+
 
 
