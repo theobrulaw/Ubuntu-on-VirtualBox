@@ -1,0 +1,178 @@
+# Lab #2: User & Sudo Management
+
+## Lab Overview
+
+This lab focuses on **Linux user account management and privilege control**
+within an Ubuntu virtual machine. Proper user and sudo configuration is a
+foundational security practice and mirrors how access is managed on cloud
+instances and production servers.
+
+The goal is to create standard user accounts, assign least-privilege access
+using `sudo`, and validate secure administrative workflows without relying on
+the root account.
+
+---
+
+## Objectives
+
+- Create and manage local Linux user accounts
+- Assign sudo privileges following least-privilege principles
+- Verify sudo access and command execution
+- Understand the role of `/etc/passwd`, `/etc/group`, and `/etc/sudoers`
+- Disable direct root login for improved security posture
+
+---
+
+## Prerequisites
+
+- Ubuntu installed on VirtualBox (Lab #1 completed)
+- Ability to log in as an existing sudo-enabled user
+- Terminal access (local or via SSH)
+
+---
+
+## Environment Details
+
+- **OS:** Ubuntu Server / Desktop LTS
+- **Virtualization:** VirtualBox
+- **Networking:** NAT
+- **Access Method:** Local console or SSH
+
+---
+
+## Tools & Commands Used
+
+- `adduser`
+- `usermod`
+- `groups`
+- `id`
+- `sudo`
+- `visudo`
+- `su`
+- `whoami`
+
+---
+
+## Lab Steps
+
+### Step 1: Verify Current User and Privileges
+
+```bash
+whoami
+groups
+sudo -v
+
+### Step 2: Create a New Standard User
+
+Create a new user account:
+```bash
+sudo adduser devuser
+
+Follow the prompts to set a password and optional user details.
+Verify user creation:
+```bash
+id devuser
+
+
+### Step 3: Verify Default Privilege Level
+
+Switch to the new user:
+```bash
+su - devuser
+
+Attempt a privileged command:
+```bash
+sudo apt update
+
+Expected result: Permission denied
+Exit back to the original user:
+```bash
+exit
+
+Step 4: Grant Sudo Access (Least Privilege)
+
+Add the user to the sudo group:
+```bash
+sudo usermod -aG sudo devuser
+
+Verify group membership:
+```bash
+groups devuser
+
+Step 5: Test Sudo Access
+
+Switch back to the new user:
+```bash
+su - devuser
+
+Test sudo functionality:
+```bash
+sudo apt update
+Expected result: command executes successfully after password prompt.
+
+Step 6: Review Sudo Configuration (Read-Only)
+
+Safely inspect sudo configuration:
+```bash
+sudo visudo
+Observe:
+%sudo ALL=(ALL:ALL) ALL
+Group-based privilege delegation
+Exit without making changes.
+
+Step 7: Disable Direct Root Login (Optional but Recommended)
+
+Lock the root account:
+```bash
+sudo passwd -l root
+
+Verify root login is disabled:
+```bash
+su -
+Expected result: authentication failure.
+
+
+### Validation & Verification 
+
+Successful completion is confirmed by:
+ New user account created successfully
+ User initially denied sudo access
+ Sudo access granted via group membership
+ Privileged commands execute only with sudo
+ Root login is disabled or restricted
+
+Optional validation:
+ SSH login tested using the new user
+ Snapshot created in VirtualBox after configuration
+
+
+### Security & Operational Considerations
+
+ Root account is not used for daily administration
+ Privilege escalation is logged and auditable via sudo
+ Group-based access simplifies permission management
+ Least-privilege principles reduce blast radius
+ User separation supports accountability and auditing
+
+###Lessons Learned
+
+ Linux user management is central to system security
+ Sudo provides controlled administrative access without exposing root
+ Group-based privilege assignment scales better than per-user rules
+ Disabling root login significantly reduces attack surface
+ These practices directly align with cloud VM and EC2 instance management
+This lab establishes a secure access baseline for future labs involving
+network services, automation, and cloud connectivity.
+
+### Next Lab
+
+Lab #3: SSH Configuration & Hardening
+ SSH key-based authentication
+ Disabling password authentication
+ Restricting SSH access by user
+ Preparing the VM for remote administration
+
+
+
+
+
