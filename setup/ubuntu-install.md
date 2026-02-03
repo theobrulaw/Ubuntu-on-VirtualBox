@@ -104,7 +104,6 @@ used in this lab.
 
 ## Validation & Verification
 Successful installation is confirmed by:
-
 - System boots without errors
 - User can log in locally
 - Network interface receives an IP address
@@ -112,7 +111,6 @@ Successful installation is confirmed by:
 - Ubuntu version and kernel information displayed correctly
 
 Optional validation:
-
 - SSH access enabled
 - Snapshot created in VirtualBox for rollback
 
@@ -122,7 +120,6 @@ Optional validation:
 - SSH service enabled for remote access (to be hardened in later labs)
 - NAT networking limits exposure to external networks
 - Snapshots provide quick recovery and change tracking
-
 
 ## Lessons Learned
 - Ubuntu installation is straightforward but requires attention to resource
