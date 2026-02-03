@@ -1,3 +1,7 @@
+## Labs Index
+See [LABS_INDEX.md](LABS_INDEX.md) for the full list of labs and instructions.
+
+
 # Ubuntu Linux on VirtualBox (Systems & Operations Lab)
 
 This repository documents hands-on labs and exercises using Ubuntu Linux
@@ -79,6 +83,4 @@ Ubuntu-on-VirtualBox/
 # Ubuntu-on-VirtualBox
 Deployed and configured an Ubuntu Linux virtual machine in VirtualBox, including system updates, user management, networking, and baseline security hardening.
 
-## Labs Index
-See [LABS_INDEX.md](LABS_INDEX.md) for the full list of labs and instructions.
 
