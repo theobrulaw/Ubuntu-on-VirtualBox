@@ -1,4 +1,4 @@
-# Lab #2: User & Sudo Management
+# Lab #3: User & Sudo Management
 
 ## Lab Overview
 
