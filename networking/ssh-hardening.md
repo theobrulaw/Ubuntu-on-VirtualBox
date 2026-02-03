@@ -1,4 +1,4 @@
-# Lab #3: SSH Configuration & Hardening
+# Lab #4: SSH Configuration & Hardening
 
 ## Lab Overview
 
